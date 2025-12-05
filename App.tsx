@@ -7,7 +7,7 @@ import MessageBubble from './components/MessageBubble';
 import StatsPanel from './components/StatsPanel';
 import InputArea from './components/InputArea';
 import SummaryCard from './components/SummaryCard';
-import { Coffee, CheckCircle, AlertCircle, XCircle } from 'lucide-react';
+import { Coffee } from 'lucide-react';
 
 const INITIAL_STATE: SessionState = {
   isActive: false,
