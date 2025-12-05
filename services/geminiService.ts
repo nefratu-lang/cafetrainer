@@ -1,8 +1,8 @@
-import { GoogleGenAI, ChatSession, Content } from "@google/genai";
+import { GoogleGenAI, Chat, Content } from "@google/genai";
 import { SYSTEM_INSTRUCTION } from '../constants';
 
 let ai: GoogleGenAI | null = null;
-let chatSession: ChatSession | null = null;
+let chatSession: Chat | null = null;
 
 export const initGemini = () => {
   if (!process.env.API_KEY) {
