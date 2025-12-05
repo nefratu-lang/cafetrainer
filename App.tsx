@@ -61,6 +61,7 @@ const App: React.FC = () => {
 
     } catch (error) {
       console.error("Failed to start session:", error);
+      alert(`Oturum başlatılamadı. Hata: ${error}\nLütfen API Anahtarını kontrol edin.`);
       setSession(prev => ({ ...prev, isLoading: false, isActive: false }));
     }
   };
