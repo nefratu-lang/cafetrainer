@@ -6,14 +6,20 @@ let chatSession: ChatSession | null = null;
 
 export const initGemini = () => {
   if (!process.env.API_KEY) {
-    console.error("API_KEY is missing in environment variables.");
-    return;
+    throw new Error("API_KEY is missing. Please check your Vercel Environment Variables.");
   }
   ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 };
 
 export const startChat = async (history: Content[] = []) => {
-  if (!ai) initGemini();
+  if (!ai) {
+    try {
+      initGemini();
+    } catch (e) {
+      console.error(e);
+      throw e; // Re-throw to be caught by UI
+    }
+  }
   if (!ai) throw new Error("Gemini AI not initialized");
 
   chatSession = ai.chats.create({
