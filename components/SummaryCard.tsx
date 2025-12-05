@@ -1,6 +1,6 @@
 import React from 'react';
 import { MistakeType } from '../types';
-import { Trophy, AlertTriangle, CheckCircle, RotateCcw } from 'lucide-react';
+import { Trophy, AlertTriangle, CheckCircle } from 'lucide-react';
 
 interface SummaryCardProps {
   score: number;
