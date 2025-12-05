@@ -7,7 +7,7 @@ import MessageBubble from './components/MessageBubble';
 import StatsPanel from './components/StatsPanel';
 import InputArea from './components/InputArea';
 import SummaryCard from './components/SummaryCard';
-import { Anchor, Ship, Coffee } from 'lucide-react';
+import { Anchor, Ship } from 'lucide-react';
 
 const INITIAL_STATE: SessionState = {
   isActive: false,
@@ -67,7 +67,6 @@ const App: React.FC = () => {
   };
 
   const handleUserMessage = async (text: string) => {
-    // Optimistic user update
     const userMsg: ChatMessage = {
       id: Date.now().toString(),
       role: 'user',
@@ -98,7 +97,6 @@ const App: React.FC = () => {
         
         next.isLoading = false;
 
-        // If we got a final summary
         if (summary) {
             next.isFinished = true;
             next.totalErrors = summary.total_errors;
@@ -112,7 +110,6 @@ const App: React.FC = () => {
             }
         }
 
-        // Process Meta Updates
         if (meta && !summary) {
             next.currentScene = meta.scene;
             next.score = prev.score + (meta.score_delta || 0);
