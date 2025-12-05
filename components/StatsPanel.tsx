@@ -1,6 +1,6 @@
 import React from 'react';
-import { SessionState, MistakeType } from '../types';
-import { Coffee, ShoppingBasket, AlertCircle, CheckCircle, TrendingUp } from 'lucide-react';
+import { SessionState } from '../types';
+import { Coffee, ShoppingBasket, AlertCircle, TrendingUp } from 'lucide-react';
 
 interface StatsPanelProps {
   session: SessionState;
@@ -66,13 +66,6 @@ const StatsPanel: React.FC<StatsPanelProps> = ({ session }) => {
           </div>
         </div>
       </div>
-
-      {session.isFinished && (
-        <div className="bg-green-50 p-4 rounded-xl border border-green-100 text-center animate-pulse">
-            <CheckCircle className="w-8 h-8 text-green-600 mx-auto mb-2"/>
-            <p className="font-bold text-green-800">Session Complete!</p>
-        </div>
-      )}
     </div>
   );
 };
