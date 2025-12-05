@@ -1,6 +1,6 @@
 import React from 'react';
 import { SessionState } from '../types';
-import { Coffee, ShoppingBasket, AlertCircle, TrendingUp } from 'lucide-react';
+import { Coffee, ShoppingBasket, TrendingUp, AlertCircle } from 'lucide-react';
 
 interface StatsPanelProps {
   session: SessionState;
