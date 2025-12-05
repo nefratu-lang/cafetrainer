@@ -1,0 +1,5 @@
+{
+  "name": "CafeTrainer",
+  "description": "An interactive A1-A2 English tutor simulating café and market scenarios to teach quantifiers.",
+  "requestFramePermissions": []
+}
